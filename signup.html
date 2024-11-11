@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortnight Debating Society - Signup</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Background and Layout */
+        body {
+            background-image: url("C:/Users/hp/Downloads/befunky_2024-10-0_19-14-58.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        /* Signup Form Container */
+        .signup-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .signup-container h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .signup-container input[type="text"],
+        .signup-container input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .signup-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .signup-container button:hover {
+            background-color: #555;
+        }
+
+        .signup-container .login-link {
+            margin-top: 20px;
+            display: inline-block;
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .signup-container .login-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Error Message Styling */
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none; /* Hidden by default */
+        }
+    </style>
+    <script>
+        function signupUser() {
+            const username = document.getElementById("signup-username").value;
+            const password = document.getElementById("signup-password").value;
+
+            // Basic input validation
+            if (username && password) {
+                // Save username and password to localStorage (for demonstration only)
+                localStorage.setItem("username", username);
+                localStorage.setItem("password", password);
+
+                alert("Signup successful! Please login now.");
+                window.location.href = "login.html"; // Redirect to login page
+            } else {
+                document.getElementById("error").style.display = "block"; // Show error if fields are empty
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="signup-container">
+        <h1>Sign Up - Fortnight Debating Society</h1>
+        
+        <!-- Input fields for username and password -->
+        <input type="text" id="signup-username" placeholder="Choose Username" required>
+        <input type="password" id="signup-password" placeholder="Choose Password" required>
+        
+        <!-- Error message for empty fields -->
+        <div id="error" class="error-message">Please fill in all fields.</div>
+        
+        <!-- Signup button -->
+        <button onclick="signupUser()">Sign Up</button>
+        
+        <!-- Login link -->
+        <p>
+            Already have an account? <a href="login.html" class="login-link">Login here</a>
+        </p>
+    </div>
+</body>
+</html>
